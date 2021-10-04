@@ -1,12 +1,11 @@
 Package: researchfunctions
-Title: What the Package Does (One Line, Title Case)
+Title: Functions for Science Scholars Research
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
+    person("Dakota", "Thompson", , "dakotasthompson@yahoo.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+Description: This package creates two random normally distributed data sets, before and after. It then computes the Cohen's d or the delta MAD effect size depending on which function is used. It also then is able to generate a confidence interval of some data set.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

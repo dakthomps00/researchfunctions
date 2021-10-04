@@ -1,3 +1,17 @@
+#' Generate a Cohen's d for two random normally distributed data sets
+#'
+#' Generates a Cohen's d effect size for two random normally distributed data sets with defined characteristics (number of subjects, mean, difference between means, and standard deviation)
+#'
+#' @param num number of subjects
+#' @param bef mean
+#' @param dif how much to add to the mean
+#' @param stdev standard deviation
+#'
+#' @return Cohen's d
+#' @export
+#' @importFrom stats rnorm sd
+#' @examples
+#' cohensd(75,0,1,1)
 cohensd <- function(num,bef,dif,stdev) {
   # simulating before
   before <- rnorm(num, bef, stdev)
@@ -12,4 +26,6 @@ cohensd <- function(num,bef,dif,stdev) {
 
   # Effect size/returning cohen's d
   return(cohend)
+
 }
+

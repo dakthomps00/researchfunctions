@@ -1,3 +1,17 @@
+#' Generate a delta MAD for two random normally distributed data sets
+#'
+#' Generates a delta MAD effect size for two random normally distributed data sets with defined characteristics (number of subjects, mean, difference between means, and standard deviation)
+#'
+#' @param num number of subjects
+#' @param bef mean
+#' @param dif how much to add to the mean
+#' @param stdev standard deviation
+#'
+#' @return Cohen's d
+#' @export
+#' @importFrom stats rnorm mad median
+#' @examples
+#' deltamad(75,0,1,1)
 deltamad <- function(num,bef,dif,stdev) {
   # simulating before
   before <- rnorm(num, bef, stdev)
