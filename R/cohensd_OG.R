@@ -11,8 +11,8 @@
 #' @export
 #' @importFrom stats rnorm sd
 #' @examples
-#' cohensd(75,0,1,1)
-cohensd <- function(num,bef,dif,stdev) {
+#' cohensd_OG(75,0,1,1)
+cohensd_OG <- function(num,bef,dif,stdev) {
   # simulating before
   before <- rnorm(num, bef, stdev)
   # simulating after
