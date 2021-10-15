@@ -9,7 +9,7 @@
 #' @export
 #' @importFrom stats sd qt
 #' @examples
-#' x <- replicate(100, cohensd(75,0,1,1))
+#' x <- replicate(100, cohensd_OG(75,0,1,1))
 #' confidint(x,75)
 confidint <- function(x,num){
   xbar = mean(x)

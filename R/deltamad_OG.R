@@ -11,7 +11,7 @@
 #' @export
 #' @importFrom stats rnorm mad median
 #' @examples
-#' deltamad(75,0,1,1)
+#' deltamad_OG(75,0,1,1)
 deltamad_OG <- function(num,bef,dif,stdev) {
   # simulating before
   before <- rnorm(num, bef, stdev)

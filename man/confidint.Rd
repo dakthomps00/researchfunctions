@@ -18,6 +18,6 @@ confidence interval
 Generates a confidence interval for a given x and number of subjects in the data sets
 }
 \examples{
-x <- replicate(100, cohensd(75,0,1,1))
+x <- replicate(100, cohensd_OG(75,0,1,1))
 confidint(x,75)
 }
