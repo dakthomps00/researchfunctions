@@ -4,7 +4,7 @@
 \alias{cohensd_B}
 \title{Generate a Cohen's d for one randomly distributed data set against a normal data set contaminated with a uniform distribution data set}
 \usage{
-cohensd_B(num0, num1, num2, bef, aft1, aft2, stdev0, stdev1, stdev2)
+cohensd_B(num0, num1, num2, bef, aft1, mini, stdev0, stdev1, maxi)
 }
 \arguments{
 \item{num0}{number of subjects}
@@ -17,13 +17,13 @@ cohensd_B(num0, num1, num2, bef, aft1, aft2, stdev0, stdev1, stdev2)
 
 \item{aft1}{mean for the first group}
 
-\item{aft2}{mean for the second group}
+\item{mini}{minimum for the second group}
 
 \item{stdev0}{standard deviation of the original group}
 
 \item{stdev1}{standard deviation for the first group}
 
-\item{stdev2}{standard deviation mean for the second group}
+\item{maxi}{maximum for the second group}
 }
 \value{
 Cohen's d
