@@ -24,7 +24,7 @@ The goal of researchfunctions is to allow me to keep all my functions for my pro
 
 You can install the development version from [GitHub](https://github.com/) with:
 
-``` r
+```{r}
 # install.packages("devtools")
 devtools::install_github("dakthomps00/researchfunctions")
 ```
@@ -37,9 +37,36 @@ Say we want to get confidence intervals of effect sizes for random normally dist
 ```{r example}
 library(researchfunctions)
 
-cohen <- replicate(10000, cohensd(75,0,1,1))
-mad <- replicate(10000, deltamad(75,0,1,1))
+cohen <- replicate(10000, cohensd_OG(75,0,1,1))
+mad <- replicate(10000, deltamad_OG(75,0,1,1))
 
 confidint(cohen, 75)
 confidint(mad,75)
 ```
+This is another basic example which shows you how to solve a common problem:
+
+Say we want to get confidence intervals of effect sizes for random normally distributed data sets that are contaminated with another normally distributed data set, we would do this
+
+```{r}
+library(researchfunctions)
+
+cohen <- replicate(10000, cohensd_A(75,0.8,0.2,0,1,1.5,1,1,0.5))
+mad <- replicate(10000, deltamad_A(75,0.8,0.2,0,1,1.5,1,1,0.5))
+
+confidint(cohen, 75)
+confidint(mad,75)
+```
+This is another basic example which shows you how to solve a common problem:
+
+Say we want to get confidence intervals of effect sizes for random normally distributed data sets that are contaminated with a uniform data set, we would do this
+
+```{r}
+library(researchfunctions)
+
+cohen <- replicate(10000, cohensd_B(75,0.8,0.2,0,1,1.5,1,1,2))
+mad <- replicate(10000, deltamad_B(75,0.8,0.2,0,1,1.5,1,1,2))
+
+confidint(cohen, 75)
+confidint(mad,75)
+```
+

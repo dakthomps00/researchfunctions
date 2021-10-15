@@ -22,5 +22,5 @@ Cohen's d
 Generates a delta MAD effect size for two random normally distributed data sets with defined characteristics (number of subjects, mean, difference between means, and standard deviation)
 }
 \examples{
-deltamad(75,0,1,1)
+deltamad_OG(75,0,1,1)
 }
