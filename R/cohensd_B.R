@@ -28,14 +28,19 @@ cohensd_B <- function(num0,num1,num2,bef,aft1,mini,stdev0,stdev1,maxi) {
       after2 <- runif(num0*num2, mini, maxi)
       after <- c(after1, after2)
 
+      meanaft <- mean(after)
+      sdaft <- sd(after)
+
       # denominator of the equation to get SD pooled
       SDpooled <- sqrt(((sd(before)^2)+(sd(after)^2))/2)
 
       # calculating cohen's d
       cohend <- (mean(after)-mean(before))/SDpooled
 
+      rtrn <- c(meanaft, sdaft, cohend)
+
       # Effect size/returning cohen's d
-      return(cohend)
+      return(rtrn)
     } else {
       x = "Mini must be smaller than maxi."
       print(x)

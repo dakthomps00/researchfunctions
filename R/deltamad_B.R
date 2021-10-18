@@ -28,14 +28,19 @@ deltamad_B <- function(num0,num1,num2,bef,aft1,mini,stdev0,stdev1,maxi) {
       after2 <- runif(num0*num2, mini, maxi)
       after <- c(after1, after2)
 
+      meanaft <- mean(after)
+      sdaft <- sd(after)
+
       # denominator of the equation to get MAD pooled
       MADpool <- (((num0-1)*mad(after))+((num0-1)*mad(before)))/((num0+num0)-2)
 
       # calculating delta MAD
       deltaMAD <- (abs((median(after))-(median(before)))/MADpool)
 
+      rtrn <- c(meanaft, sdaft, deltaMAD)
+
       # Effect size/returning MAD
-      return(deltaMAD)
+      return(rtrn)
     } else {
       x = "Mini must be smaller than maxi."
       print(x)

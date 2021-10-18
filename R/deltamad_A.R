@@ -27,14 +27,19 @@ deltamad_A <- function(num0,num1,num2,bef,aft1,aft2,stdev0,stdev1,stdev2) {
     after2 <- rnorm(num0*num2, aft2, stdev2)
     after <- c(after1, after2)
 
+    meanaft <- mean(after)
+    sdaft <- sd(after)
+
   # denominator of the equation to get MAD pooled
   MADpool <- (((num0-1)*mad(after))+((num0-1)*mad(before)))/((num0+num0)-2)
 
   # calculating delta MAD
   deltaMAD <- (abs((median(after))-(median(before)))/MADpool)
 
+  rtrn <- c(meanaft, sdaft, deltaMAD)
+
   # Effect size/returning MAD
-  return(deltaMAD)
+  return(rtrn)
   } else {
     x = "Num1 and Num2 must sum to 100% or 1.00."
     print(x)
