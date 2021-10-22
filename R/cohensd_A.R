@@ -19,26 +19,50 @@
 #' @examples
 #' cohensd_A(75,0.8,0.2,0,1,0.5,1,1,2)
 cohensd_A <- function(num0,num1,num2,bef,aft1,aft2,stdev0,stdev1,stdev2) {
+
+  # makes sure that the contaminated group's percentages
+  # add up to 100% because you can't have 2 groups adding
+  # to say 70% or 135% of the total subjects
   if((num1+num2) == 1){
+
     # simulating before
+    # creates a normal distribution of user input number of subjects,
+    # mean, and standard deviation
     before <- rnorm(num0, bef, stdev0)
-    # simulating after
+
+    # simulating after/contaminated groups
+    # creates a normal distribution of user input number of subjects,
+    # mean, and standard deviation
+    # also takes into account percentage of contamination
+    # (user input percentage of the first group, percentage of the second group adding to 100%)
     after1 <- rnorm(num0*num1, aft1, stdev1)
     after2 <- rnorm(num0*num2, aft2, stdev2)
+
+    # combines distributions into one group
     after <- c(after1, after2)
 
+    # finds the mean and standard deviation of the contaminated group
     meanaft <- mean(after)
     sdaft <- sd(after)
 
     # denominator of the equation to get SD pooled
+    # takes the before group's standard deviation and squares it
+    # takes the after group's standard deviation and squares it
+    # adds them together and divides by two
+    # finally, takes the square root
     SDpooled <- sqrt(((sd(before)^2)+(sd(after)^2))/2)
 
     # calculating cohen's d
+    # takes the after group's mean, and takes the before group's mean
+    # subtracts the before group's mean from the after group's mean
+    # divides by the pooled standard deviation found above
     cohend <- (mean(after)-mean(before))/SDpooled
 
+    # creates a data frame of calculated cohen's d, mean of the after
+    # group, and standard deviation of the after group
     rtrn <- c(meanaft, sdaft, cohend)
 
-    # Effect size/returning cohen's d
+    # returns the data frame
     return(rtrn)
   } else {
     x = "Num1 and Num2 must sum to 100% or 1.00."

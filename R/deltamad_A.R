@@ -19,6 +19,10 @@
 #' @examples
 #' deltamad_A(75,0.8,0.2,0,1,0.5,1,1,2)
 deltamad_A <- function(num0,num1,num2,bef,aft1,aft2,stdev0,stdev1,stdev2) {
+
+  # makes sure that the contaminated group's percentages
+  # add up to 100% because you can't have 2 groups adding
+  # to say 70% or 135% of the total subjects
   if((num1+num2) == 1){
     # simulating before
     before <- rnorm(num0, bef, stdev0)
