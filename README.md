@@ -18,7 +18,7 @@ You can install the development version from
 # install.packages("devtools")
 devtools::install_github("dakthomps00/researchfunctions")
 #> Downloading GitHub repo dakthomps00/researchfunctions@HEAD
-#>       v  checking for file 'C:\Users\Dakota\AppData\Local\Temp\Rtmp0ORHxH\remotes3fd82da944f9\dakthomps00-researchfunctions-66c6825/DESCRIPTION'
+#>          checking for file 'C:\Users\Dakota\AppData\Local\Temp\Rtmpo3nZyL\remotes765c12565ba1\dakthomps00-researchfunctions-82ae48c/DESCRIPTION' ...  v  checking for file 'C:\Users\Dakota\AppData\Local\Temp\Rtmpo3nZyL\remotes765c12565ba1\dakthomps00-researchfunctions-82ae48c/DESCRIPTION'
 #>       -  preparing 'researchfunctions':
 #>    checking DESCRIPTION meta-information ...     checking DESCRIPTION meta-information ...   v  checking DESCRIPTION meta-information
 #>       -  checking for LF line-endings in source and make files and shell scripts
@@ -43,16 +43,16 @@ mad <- replicate(10000, deltamad_OG(75,0,1,1))
 
 confidint(cohen, 75)
 #> $Low
-#> [1] 0.9709648
+#> [1] 0.9702434
 #> 
 #> $High
-#> [1] 1.038174
+#> [1] 1.037725
 confidint(mad,75)
 #> $Low
-#> [1] 0.9738608
+#> [1] 0.9769869
 #> 
 #> $High
-#> [1] 1.062205
+#> [1] 1.066084
 ```
 
 This is another basic example which shows you how to solve a common
@@ -68,18 +68,21 @@ library(researchfunctions)
 cohen <- replicate(10000, cohensd_A(75,0.8,0.2,0,1,1.5,1,1,0.5))
 mad <- replicate(10000, deltamad_A(75,0.8,0.2,0,1,1.5,1,1,0.5))
 
-confidint(cohen, 75)
+cohen1 <- t(cohen)
+mad1 <- t(mad)
+
+confidint(cohen1[,1], 75)
 #> $Low
-#> [1] 1.103487
+#> [1] 1.081323
 #> 
 #> $High
-#> [1] 1.172777
-confidint(mad,75)
+#> [1] 1.121612
+confidint(mad1[,1],75)
 #> $Low
-#> [1] 1.187923
+#> [1] 1.079024
 #> 
 #> $High
-#> [1] 1.282907
+#> [1] 1.120095
 ```
 
 This is another basic example which shows you how to solve a common
@@ -95,16 +98,19 @@ library(researchfunctions)
 cohen <- replicate(10000, cohensd_B(75,0.8,0.2,0,1,1.5,1,1,2))
 mad <- replicate(10000, deltamad_B(75,0.8,0.2,0,1,1.5,1,1,2))
 
-confidint(cohen, 75)
+cohen1 <- t(cohen)
+mad1 <- t(mad)
+
+confidint(cohen1[,1], 75)
 #> $Low
-#> [1] 1.155872
+#> [1] 1.129039
 #> 
 #> $High
-#> [1] 1.225105
-confidint(mad,75)
+#> [1] 1.16921
+confidint(mad1[,1],75)
 #> $Low
-#> [1] 1.371196
+#> [1] 1.130294
 #> 
 #> $High
-#> [1] 1.487798
+#> [1] 1.170551
 ```

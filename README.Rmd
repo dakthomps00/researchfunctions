@@ -53,8 +53,11 @@ library(researchfunctions)
 cohen <- replicate(10000, cohensd_A(75,0.8,0.2,0,1,1.5,1,1,0.5))
 mad <- replicate(10000, deltamad_A(75,0.8,0.2,0,1,1.5,1,1,0.5))
 
-confidint(cohen, 75)
-confidint(mad,75)
+cohen1 <- t(cohen)
+mad1 <- t(mad)
+
+confidint(cohen1[,1], 75)
+confidint(mad1[,1],75)
 ```
 This is another basic example which shows you how to solve a common problem:
 
@@ -66,7 +69,10 @@ library(researchfunctions)
 cohen <- replicate(10000, cohensd_B(75,0.8,0.2,0,1,1.5,1,1,2))
 mad <- replicate(10000, deltamad_B(75,0.8,0.2,0,1,1.5,1,1,2))
 
-confidint(cohen, 75)
-confidint(mad,75)
+cohen1 <- t(cohen)
+mad1 <- t(mad)
+
+confidint(cohen1[,1], 75)
+confidint(mad1[,1],75)
 ```
 

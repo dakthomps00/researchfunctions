@@ -1,6 +1,6 @@
-#' Generate a delta MAD for one randomly distributed data set against a normal data set contaminated with a uniform distribution data set
+#' Generate the mean of the contaminated group, the standard deviation of the contaminated group, and delta MAD for one randomly distributed data set against a normal data set contaminated with a uniform distribution data set
 #'
-#' Generates a delta MAD effect size for one randomly distributed data set against a normal data set contaminated with a uniform distribution data set with defined characteristics (number of subjects, percent of subjects with x mean and y standard deviation, percent of subjects with z mean and a standard deviation, mean of the first data set, x mean, z mean, standard deviation of the second data set, y standard deviation, and a standard deviation)
+#' Generates the mean of the contaminated group, the standard deviation of the contaminated group, and delta MAD effect size for one randomly distributed data set against a normal data set contaminated with a uniform distribution data set with defined characteristics (number of subjects, percent of subjects with x mean and y standard deviation, percent of subjects with z mean and a standard deviation, mean of the first data set, x mean, z mean, standard deviation of the second data set, y standard deviation, and a standard deviation)
 #'
 #' @param num0 number of subjects
 #' @param num1 percent/decimal of subjects for the first group
@@ -12,7 +12,7 @@
 #' @param stdev1 standard deviation for the first group
 #' @param maxi maximum for the second group
 #'
-#' @return Cohen's d
+#' @return data frame with mean of the contaminated group, standard deviation of the contaminated group, and delta MAD
 #' @importFrom stats rnorm sd runif
 #' @export
 #'
