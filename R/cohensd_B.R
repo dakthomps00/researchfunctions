@@ -12,7 +12,7 @@
 #' @param stdev1 standard deviation for the first group
 #' @param maxi maximum for the second group
 #'
-#' @return data frame with mean of the contaminated group, standard deviation of the contaminated group, and Cohen's d
+#' @return vector with mean of the contaminated group, standard deviation of the contaminated group, and Cohen's d
 #' @importFrom stats rnorm sd runif
 #' @export
 #'
@@ -63,11 +63,11 @@ cohensd_B <- function(num0,num1,num2,bef,aft1,mini,stdev0,stdev1,maxi) {
       # divides by the pooled standard deviation found above
       cohend <- (mean(after)-mean(before))/SDpooled
 
-      # creates a data frame of calculated cohen's d, mean of the after
+      # creates a vector of calculated cohen's d, mean of the after
       # group, and standard deviation of the after group
       rtrn <- c(meanaft, sdaft, cohend)
 
-      # returns the data frame
+      # returns the vector
       return(rtrn)
     } else {
       x = "Minimum for the uniform distribution must be smaller than maximum for the uniform distribution."

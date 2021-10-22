@@ -12,7 +12,7 @@
 #' @param stdev1 standard deviation for the first group
 #' @param maxi maximum for the second group
 #'
-#' @return data frame with mean of the contaminated group, standard deviation of the contaminated group, and delta MAD
+#' @return vector with mean of the contaminated group, standard deviation of the contaminated group, and delta MAD
 #' @importFrom stats rnorm sd runif
 #' @export
 #'
@@ -63,11 +63,11 @@ deltamad_B <- function(num0,num1,num2,bef,aft1,mini,stdev0,stdev1,maxi) {
       # divides by the pooled median absolute difference found above
       deltaMAD <- (abs((median(after))-(median(before)))/MADpool)
 
-      # creates a data frame of calculated delta MAD, mean of the after
+      # creates a vector of calculated delta MAD, mean of the after
       # group, and standard deviation of the after group
       rtrn <- c(meanaft, sdaft, deltaMAD)
 
-      # returns the data frame
+      # returns the vector
       return(rtrn)
     } else {
       x = "Mini must be smaller than maxi."

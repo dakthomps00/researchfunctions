@@ -12,7 +12,7 @@
 #' @param stdev1 standard deviation for the first group
 #' @param stdev2 standard deviation mean for the second group
 #'
-#' @return data frame with mean of the contaminated group, standard deviation of the contaminated group, and delta MAD
+#' @return vector with mean of the contaminated group, standard deviation of the contaminated group, and delta MAD
 #' @importFrom stats rnorm sd
 #' @export
 #'
@@ -58,11 +58,11 @@ deltamad_A <- function(num0,num1,num2,bef,aft1,aft2,stdev0,stdev1,stdev2) {
   # divides by the pooled median absolute difference found above
   deltaMAD <- (abs((median(after))-(median(before)))/MADpool)
 
-  # creates a data frame of calculated delta MAD, mean of the after
+  # creates a vector of calculated delta MAD, mean of the after
   # group, and standard deviation of the after group
   rtrn <- c(meanaft, sdaft, deltaMAD)
 
-  # returns the data frame
+  # returns the vector
   return(rtrn)
   } else {
     x = "Num1 and Num2 must sum to 100% or 1.00."

@@ -12,7 +12,7 @@
 #' @param stdev1 standard deviation for the first group
 #' @param stdev2 standard deviation mean for the second group
 #'
-#' @return data frame with mean of the contaminated group, standard deviation of the contaminated group, and Cohen's d
+#' @return vector with mean of the contaminated group, standard deviation of the contaminated group, and Cohen's d
 #' @importFrom stats rnorm sd
 #' @export
 #'
@@ -58,11 +58,11 @@ cohensd_A <- function(num0,num1,num2,bef,aft1,aft2,stdev0,stdev1,stdev2) {
     # divides by the pooled standard deviation found above
     cohend <- (mean(after)-mean(before))/SDpooled
 
-    # creates a data frame of calculated cohen's d, mean of the after
+    # creates a vector of calculated cohen's d, mean of the after
     # group, and standard deviation of the after group
     rtrn <- c(meanaft, sdaft, cohend)
 
-    # returns the data frame
+    # returns the vector
     return(rtrn)
   } else {
     x = "Num1 and Num2 must sum to 100% or 1.00."

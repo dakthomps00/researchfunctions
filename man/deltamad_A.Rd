@@ -26,7 +26,7 @@ deltamad_A(num0, num1, num2, bef, aft1, aft2, stdev0, stdev1, stdev2)
 \item{stdev2}{standard deviation mean for the second group}
 }
 \value{
-data frame with mean of the contaminated group, standard deviation of the contaminated group, and delta MAD
+vector with mean of the contaminated group, standard deviation of the contaminated group, and delta MAD
 }
 \description{
 Generates the mean of the contaminated group, the standard deviation of the contaminated group, and delta MAD effect size for one randomly distributed data set against a normal data set contaminated with another normal data set with defined characteristics (number of subjects, percent of subjects with x mean and y standard deviation, percent of subjects with z mean and a standard deviation, mean of the first data set, x mean, z mean, standard deviation of the second data set, y standard deviation, and a standard deviation)
