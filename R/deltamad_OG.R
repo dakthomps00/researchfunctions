@@ -7,7 +7,7 @@
 #' @param dif how much to add to the mean
 #' @param stdev standard deviation
 #'
-#' @return Cohen's d
+#' @return delta MAD
 #' @export
 #' @importFrom stats rnorm mad median
 #' @examples
