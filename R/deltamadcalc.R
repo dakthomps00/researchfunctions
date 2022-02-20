@@ -10,6 +10,8 @@
 #' @export
 #' @importFrom stats rnorm mad median
 #' @examples
+#' beforegroup<-rnorm(75,0,1)
+#' aftergroup<-rnorm(75,1,1)
 #' deltamadcalc(numberofsubjects,beforegroup,aftergroup)
 deltamadcalc <- function(num,before,after) {
 

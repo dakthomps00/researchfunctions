@@ -9,6 +9,8 @@
 #' @export
 #' @importFrom stats rnorm sd
 #' @examples
+#' beforegroup<-rnorm(75,0,1)
+#' aftergroup<-rnorm(75,1,1)
 #' cohensdcalc(beforegroup,aftergroup)
 cohensdcalc <- function(before,after) {
 
