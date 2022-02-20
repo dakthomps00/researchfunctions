@@ -75,4 +75,15 @@ mad1 <- t(mad)
 confidint(cohen1[,1], 75)
 confidint(mad1[,1],75)
 ```
+This is another basic example which shows you how to solve a common problem:
+
+Say we want to find effect sizes for 2 Poisson distributions
+
+```{r}
+before <- rpois(75,2)
+after <- rpois(75,3)
+
+cohensdcalc(before,after)
+deltamadcalc(75,before,after)
+```
 

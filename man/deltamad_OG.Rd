@@ -16,7 +16,7 @@ deltamad_OG(num, bef, dif, stdev)
 \item{stdev}{standard deviation}
 }
 \value{
-Cohen's d
+delta MAD
 }
 \description{
 Generates a delta MAD effect size for two random normally distributed data sets with defined characteristics (number of subjects, mean, difference between means, and standard deviation)
