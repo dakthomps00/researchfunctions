@@ -9,7 +9,7 @@
 #' @export
 #' @importFrom stats rnorm sd
 #' @examples
-#' cohensd(beforegroup,aftergroup)
+#' cohensdcalc(beforegroup,aftergroup)
 cohensdcalc <- function(before,after) {
 
   # denominator of the equation to get SD pooled

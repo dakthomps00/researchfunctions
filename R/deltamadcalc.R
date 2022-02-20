@@ -10,7 +10,7 @@
 #' @export
 #' @importFrom stats rnorm mad median
 #' @examples
-#' deltamad(numberofsubjects,beforegroup,aftergroup)
+#' deltamadcalc(numberofsubjects,beforegroup,aftergroup)
 deltamadcalc <- function(num,before,after) {
 
   # denominator of the equation to get MAD pooled
